@@ -28,3 +28,10 @@ class Status(enum.Enum):
     UPDATED = 5
     EXECUTED = 6
     PARTIALLY_EXECUTED = 7
+
+
+class Error(enum.Enum):
+    # order has wrong data
+    bad_order = 1
+    # Market order is too large for the size of the order book
+    large_market_order = 2

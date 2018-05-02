@@ -19,9 +19,19 @@ class Ccy(enum.Enum):
     LTC = 5
 
 
+class Action(enum.Enum):
+    ADD = 1
+    REJECT = 2
+    DELETE = 3
+    CANCEL = 4
+    UPDATE = 5
+    EXECUTION = 6
+    PARTIALL_EXECUTION = 7
+
+
 class Status(enum.Enum):
     PENDING = 0
-    ACCEPTED = 1
+    ADDED = 1
     REJECTED = 2
     DELETED = 3
     CANCELLED = 4

@@ -1,6 +1,9 @@
 import enum
 
 
+Tenors = frozenset(('1w', '2w', '1m'))
+
+
 class OrderType(enum.Enum):
     limit = 0
     market = 1

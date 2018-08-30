@@ -1,8 +1,5 @@
-from .component import Component
+from .component import ReadComponent
 
 
-class Loans(Component):
-
-    def get(self, id):
-        url = self.cli.url('%s/%s' % (self.base, id))
-        return self.request('GET', url)
+class Loans(ReadComponent):
+    pass

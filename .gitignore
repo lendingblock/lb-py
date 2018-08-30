@@ -16,3 +16,6 @@ dist
 # files
 .env
 *.log
+
+# ide
+.idea

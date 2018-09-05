@@ -20,7 +20,7 @@ class Lendingblock:
         url = self.api_url
         if path and path.startswith('/'):
             path = path[1:]
-        return '%s/%s' % (url, path) if path else url
+        return f'{url}/{path}' if path else url
 
     async def close(self):
         if self.session:

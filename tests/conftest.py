@@ -1,12 +1,10 @@
-import os
 import asyncio
-
-from faker import Faker
+import os
 
 import pytest
+from faker import Faker
 
 from lendingblock.client import Lendingblock
-
 
 fake = Faker()
 
@@ -38,3 +36,16 @@ async def lb(loop):
     cli.token = token['key']
     yield cli
     await cli.close()
+
+
+@pytest.fixture
+async def org_id(lb):
+    org_data = await lb.execute(
+        '/organizations',
+        'POST',
+        json={
+            'email': fake.ascii_company_email(),
+            'country': 'GB',
+        },
+    )
+    return org_data['id']

@@ -1,8 +1,5 @@
-from .component import Component
+from .component import CrudComponent
 
 
-class Orders(Component):
-
-    def create(self, *args, **kwargs):
-        payload = dict(*args, **kwargs)
-        return self.request('POST', json=payload)
+class Orders(CrudComponent):
+    pass
